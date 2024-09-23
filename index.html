@@ -8,13 +8,13 @@
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-  <header>
+  <header class="sticky top-0 z-30 ">
     <section class="container bg-[#F9F7F3]">
-      <div class="flex justify-between m-6 ml-20 mr-20 p-5 mb-12">
-        <button class="bg-lime-300 btn font-bold text-xl">Blog</button>
+      <div class="flex justify-between  lg:ml-20 lg:mr-20 p-5 lg:mb-12 ">
+        <button id="blog-text" class="bg-lime-300 btn font-bold text-xl">Blog</button>
       <div class="flex items-center gap-4">
-       <img src="./assets/logo.png" alt="">
-        <button class="text-[#111111] font-bold">Donate Bangladesh</button>
+       <img class="w-[30px]" src="./assets/logo.png" alt="">
+        <button class="text-[#111111] lg:font-bold">Donate Bangladesh</button>
       </div>
         <div class="flex items-center gap-2 ">
           <img src="./assets/coin.png" alt="">
@@ -24,23 +24,23 @@
       </div>
     </section>
   </header>
-  <main>
+  <main class="">
     <!-- donate button start -->
-   <div class="text-center">
-    <button id="btnDone" class=" mr-5 bg-[#B4F461] p-3 font-bold rounded-md">Donation</button>
-    <button id="btn-history" class="ring-1 p-3 font-bold rounded-md">History</button>
+   <div class="text-center lg:sticky top-[120px] z-30 mt-4">
+    <button id="btnDone" class="btn mr-5 bg-[#B4F461] p-3 font-bold rounded-md border-t-neutral-200">Donation</button>
+    <button id="btn-history" class="border-t-neutral-200 p-3 font-bold rounded-md btn">History</button>
    </div>
    <!-- donate button end -->
     
        <!-- history section start -->
-     <div id="history-container" class="hidden w-[70%] mx-auto mt-10 border-zinc-100 bg-slate-200 rounded-md p-3">
-
+     <div id="history-container" class="hidden w-[70%] mx-auto mt-10 border-zinc-100 ring-1 rounded-md p-3">
+      <p id="dateTime">10:30am</p>
      </div>
-   
+     
 
      <!-- history section end -->
       <!-- donate post section start -->
-     <section id="section1">
+     <section id="section1" class="">
       <div class="hero m-auto mt-10">
         <div class="hero-content flex-col lg:flex-row gap-5">
           <img
@@ -117,24 +117,27 @@
 <footer>
 
 </footer>
+
+  <script src="./js/blog.js"></script>
   <script src="./js/buttonchange.js"></script>
   <script src="./js/fetures.js"></script>
   <script src="./js/function.js"></script>
+  <script src="./js/bloghome.js"></script>
 
       <!-- The button to open modal -->
-<label for="my_modal_6" class="btn">Click</label>
 
 
-<input type="checkbox" id="my_modal_6" class="modal-toggle" />
-<div class="modal text-center" role="dialog">
-  <div class="modal-box">
-    <h3 class="text-4xl font-bold">Congrates!</h3>
-    <p class="py-4 text-xl">You Have Donated for Humakind</p>
-    <p class="py-4 text-xl">Successfully</p>
-    <div class="modal-action flex justify-center">
-      <label for="my_modal_6" class="btn bg-[#1111110D] ">Close Confirmation</label>
-    </div>
-  </div>
-</div>
+      <input type="checkbox" id="my_modal_6" class="modal-toggle" />
+      <div class="modal text-center" role="dialog">
+        <div class="modal-box">
+          <h3 class="text-4xl font-bold">Congrats!</h3>
+          <div class="flex justify-center mt-3"><img  src="assets/coin.png" alt=""></div>
+          <p class="py-4 text-xl">You Have Donated for Humankind</p>
+          <p class="py-4 text-xl">Successfully</p>
+          <div class="modal-action flex justify-center">
+            <label for="my_modal_6" class="btn bg-[#1111110D]">Close Confirmation</label>
+          </div>
+        </div>
+      </div>
 </body>
 </html>

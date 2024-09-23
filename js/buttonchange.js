@@ -7,7 +7,6 @@ document.getElementById('btn-history').addEventListener('click',function(){
   
 })
 document.getElementById('btnDone').addEventListener('click',function(){
-  console.log('clicked!')
   btnDone.classList.add('bg-[#B4F461]');
   const btnHist = document.getElementById('btn-history');
   btnHist.classList.remove('bg-[#B4F461]');
