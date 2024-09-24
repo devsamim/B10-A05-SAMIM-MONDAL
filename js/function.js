@@ -13,6 +13,7 @@ function showSectionById(id){
   document.getElementById('section2').classList.add('hidden');
   document.getElementById('section3').classList.add('hidden');
   document.getElementById('history-container').classList.add('hidden');
+  document.getElementById('history-container2').classList.add('hidden');
 
   document.getElementById(id).classList.remove('hidden');
 
