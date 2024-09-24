@@ -4,6 +4,16 @@ document.getElementById('donate-btn-1').addEventListener('click',function(){
   const exitingBalance = getTextValueById('valueOne');
   const donate1Value = getInputValueById('donate-input-one');
   const newBalance = exitingBalance + donate1Value;
+  if(isNaN(donate1Value) || donate1Value <=0 ){
+   alert('invalid input!..');
+   return;
+  };
+  document.getElementById('valueOne').innerText = newBalance;
+  const mainWallet = getTextValueById('mainWallet');
+  const donateWallet = mainWallet - donate1Value ;
+  console.log(donateWallet);
+  document.getElementById('mainWallet').innerText = donateWallet;
+  
   // modal add
   document.getElementById("my_modal_6").checked = true; 
     // add to transaction history
@@ -14,16 +24,16 @@ document.getElementById('donate-btn-1').addEventListener('click',function(){
     // should be a common function
     document.getElementById('history-container').appendChild(p);
     
-  document.getElementById('valueOne').innerText =newBalance;
-  const mainWallet = getTextValueById('mainWallet');
-  const donateWallet = donate1Value - mainWallet;
-  document.getElementById('mainWallet').innerText = donateWallet;
   
 });
 document.getElementById('donate-btn-2').addEventListener('click',function(){
   const exitingBalance = getTextValueById('valueTwo');
   const donate1Value = getInputValueById('donate-input-two');
   const newBalance = exitingBalance + donate1Value;
+  if(isNaN(donate1Value) || donate1Value <=0 ){
+    alert('invalid input!..');
+    return;
+   };
   // modal add
   document.getElementById("my_modal_6").checked = true; 
   // add to transaction history
@@ -36,7 +46,7 @@ document.getElementById('donate-btn-2').addEventListener('click',function(){
 
   document.getElementById('valueTwo').innerText =newBalance;
   const mainWallet = getTextValueById('mainWallet');
-  const donateWallet = donate1Value - mainWallet;
+  const donateWallet = mainWallet - donate1Value ;
   document.getElementById('mainWallet').innerText = donateWallet;
   
 });
@@ -44,13 +54,21 @@ document.getElementById('donate-btn-3').addEventListener('click',function(){
   const exitingBalance = getTextValueById('valueThree');
   const donate1Value = getInputValueById('donate-input-three');
   const newBalance = exitingBalance + donate1Value;
+  if(isNaN(donate1Value) || donate1Value <=0 ){
+    alert('invalid input!..');
+    return;
+   };
   // modal add
+ 
+  document.getElementById('valueThree').innerText =newBalance;
+  const mainWallet = getTextValueById('mainWallet');
+  const donateWallet = mainWallet - donate1Value ;
+  document.getElementById('mainWallet').innerText = donateWallet;
+  
   document.getElementById("my_modal_6").checked = true; 
-  // add to transaction history
-  // const p = document.createElement('p');
-  // p.innerText = ` ${donate1Value} Tk. Aid for Injured in the Quota Movement`;
-  // // should be a common function
-  // document.getElementById('history-container').appendChild(p);
+});
+
+  
 
 const p = document.createElement('p');
  p.style.padding='6px';
@@ -62,23 +80,5 @@ const p = document.createElement('p');
  `;
 document.getElementById('show-txn-history').appendChild(p);
 
-
-   // local date time
-   const currentDateTime = new Date();
-
-  
-   const formattedDate = currentDateTime.toLocaleDateString();  
-   const formattedTime = currentDateTime.toLocaleTimeString();  
-   const concat = formattedDate + formattedTime ;
-   document.getElementById('dateTime').innerText = concat;
-   
-   
-   
-  
-   
-  document.getElementById('valueThree').innerText =newBalance;
-  const mainWallet = getTextValueById('mainWallet');
-  const donateWallet = donate1Value - mainWallet;
-  document.getElementById('mainWallet').innerText = donateWallet;
-  
-});
+const newDate = new Date();
+console.log(newDate);
