@@ -3,16 +3,22 @@
 document.getElementById('donate-btn-1').addEventListener('click',function(){
   const exitingBalance = getTextValueById('valueOne');
   const donate1Value = getInputValueById('donate-input-one');
+  const mainWallet = getTextValueById('mainWallet');
   const newBalance = exitingBalance + donate1Value;
   if(isNaN(donate1Value) || donate1Value <=0 ){
    alert('invalid donate amount!..');
    return;
   };
-  document.getElementById('valueOne').innerText = newBalance;
-  const mainWallet = getTextValueById('mainWallet');
-  const donateWallet = mainWallet - donate1Value ;
-  document.getElementById('mainWallet').innerText = donateWallet;
+  if (donate1Value > mainWallet) {
+    alert('insufficient main wallet balance!..');
+    return;
+  }
   
+  document.getElementById('valueOne').innerText = newBalance;
+  const donateWallet = mainWallet - donate1Value ;
+ 
+  document.getElementById('mainWallet').innerText = donateWallet;
+ 
   // modal add
   document.getElementById("my_modal_6").checked = true; 
 
@@ -36,13 +42,18 @@ document.getElementById('donate-btn-1').addEventListener('click',function(){
 document.getElementById('donate-btn-2').addEventListener('click',function(){
   const exitingBalance = getTextValueById('valueTwo');
   const donate1Value = getInputValueById('donate-input-two');
+  const mainWallet = getTextValueById('mainWallet');
   const newBalance = exitingBalance + donate1Value;
   if(isNaN(donate1Value) || donate1Value <=0 ){
     alert('invalid donate amount!..');
     return;
    };
+   if(donate1Value > mainWallet){
+    alert('insufficient main wallet balance!..');
+    return;
+   }
    document.getElementById('valueTwo').innerText =newBalance;
-   const mainWallet = getTextValueById('mainWallet');
+  
    const donateWallet = mainWallet - donate1Value ;
    document.getElementById('mainWallet').innerText = donateWallet;
 
@@ -67,15 +78,19 @@ div.appendChild(dateTimePara);
 document.getElementById('donate-btn-3').addEventListener('click',function(){
   const exitingBalance = getTextValueById('valueThree');
   const donate1Value = getInputValueById('donate-input-three');
+  const mainWallet = getTextValueById('mainWallet');
   const newBalance = exitingBalance + donate1Value;
   if(isNaN(donate1Value) || donate1Value <=0 ){
     alert('invalid donate amount!..');
     return;
    };
+   if(donate1Value > mainWallet){
+    alert('insufficient main wallet balance!..');
+    return;
+   }
    document.getElementById("my_modal_6").checked = true; 
 
   document.getElementById('valueThree').innerText =newBalance;
-  const mainWallet = getTextValueById('mainWallet');
   const donateWallet = mainWallet - donate1Value ;
   document.getElementById('mainWallet').innerText = donateWallet;
   const div = document.createElement('div');
